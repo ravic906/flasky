@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title%} Login Page {% endblock %}
+{% block login %}
+<form action="#" method="POST">
+<label> Name: </label>
+<input type ="text" name ="username">
+<p><button type="submit">Submit</button></p>
+</form>  
+{% endblock %}
+{% block greeting %}
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% for category,message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+{{% endwith %}}
+{% endblock %}
